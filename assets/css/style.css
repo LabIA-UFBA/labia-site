@@ -2,7 +2,6 @@
    LABIA - UFBA | Main Stylesheet
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
 
 /* --- CSS Variables --- */
 :root {
@@ -75,6 +74,10 @@ img {
 
 .section {
   padding: 6rem 0;
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
 }
 
 .section-label {
@@ -171,8 +174,19 @@ body::before {
 }
 
 .nav-brand-logo {
-  height: 36px;
+  height: 52px;
   width: auto;
+  display: block;
+}
+
+.hero-logo {
+  height: 180px;
+  width: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  display: block;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .nav-brand-text {
@@ -217,6 +231,30 @@ body::before {
   color: var(--color-accent);
 }
 
+.nav-links a.nav-github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+  margin-left: 0.25rem;
+}
+
+.nav-links a.nav-github:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.nav-links a.nav-github svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -235,6 +273,7 @@ body::before {
   position: relative;
   overflow: hidden;
   padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .hero-bg {
@@ -285,6 +324,7 @@ body::before {
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
   mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
 }
 
@@ -297,10 +337,16 @@ body::before {
 .hero .container {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-badge {
@@ -361,6 +407,33 @@ body::before {
   display: flex;
   gap: 1rem;
   animation: fadeInUp 0.8s ease-out 0.3s both;
+  margin-bottom: 4rem;
+}
+
+.hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--color-text-muted), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.45; }
+  50% { transform: scaleY(0.5); opacity: 1; }
 }
 
 @keyframes fadeInUp {
@@ -871,6 +944,131 @@ body::before {
   text-align: center;
 }
 
+/* --- Former Members Table --- */
+.former-group {
+  margin-top: 2.5rem;
+}
+
+.former-table-wrap--top {
+  margin-top: 2.5rem;
+}
+
+.former-group-label {
+  margin-bottom: 0.75rem;
+}
+
+.former-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.former-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.former-table thead tr {
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.former-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.former-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition);
+}
+
+.former-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.former-table tbody tr:hover {
+  background: var(--color-surface);
+}
+
+.former-table td {
+  padding: 1rem 1.25rem;
+  color: var(--color-text);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.former-name {
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-text) !important;
+}
+
+.former-period {
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.former-about {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.degree-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.degree-badge.phd {
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.degree-badge.msc {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.degree-badge.postdoc {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.degree-badge.ic {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.degree-badge.spec {
+  background: rgba(251, 146, 60, 0.1);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
+.former-empty {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 1rem 0 0.5rem;
+}
+
 /* --- Footer --- */
 .footer {
   border-top: 1px solid var(--color-border);
@@ -914,6 +1112,7 @@ body::before {
   right: 0;
   bottom: 0;
   background: rgba(10, 15, 26, 0.95);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;
   flex-direction: column;
@@ -970,6 +1169,10 @@ body::before {
 
   .nav-toggle {
     display: block;
+  }
+
+  .hero-logo {
+    height: 68px;
   }
 
   .hero h1 {
