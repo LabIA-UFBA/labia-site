@@ -75,7 +75,7 @@ Aparece na [**home**](https://labia.ufba.br) e na página [**Research**](https:/
 
 ### Adicionar foto de uma pessoa
 
-Coloque o arquivo `.webp` em `src/assets/img/team/` e referencie o nome exato do arquivo na coluna `photo` do CSV correspondente.
+Coloque o arquivo `.webp` em [`src/assets/img/team/`](.src/assets/img/team) e referencie o nome exato do arquivo na coluna `photo` do CSV correspondente.
 
 ---
 
@@ -111,6 +111,6 @@ Gera o site estático em `_site/`.
 
 ## Stack
 
-- [Eleventy (11ty)](https://www.11ty.dev/) — gerador de site estático (SSG)
-- [Nunjucks](https://mozilla.github.io/nunjucks/) — linguagem de templates
+- [Eleventy (11ty)](https://www.11ty.dev/): gerador de site estático (SSG)
+- [Nunjucks](https://mozilla.github.io/nunjucks/): linguagem de templates
 - CSV como fonte de dados (editável por qualquer software de planilhas: (ex.: Google Sheets, Excel, LibreOffice))
