@@ -1,0 +1,78 @@
+---
+layout: base.njk
+title: Research — LABIA | UFBA
+description: Research areas and application domains of the LABIA group at UFBA.
+---
+
+{% from "partials/area-card.njk" import areaCard, appCard %}
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-label">Our Focus</span>
+    <h1 class="section-title" style="font-size: clamp(2.2rem, 5vw, 3.5rem);">Research <em>Areas</em></h1>
+    <p class="section-description">Computational Intelligence is one of the areas of Artificial Intelligence that deals with automatic knowledge acquisition. Our group is focused on the theory, application, and development of computational intelligence methods.</p>
+  </div>
+</section>
+
+<!-- Core Techniques -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Techniques</span>
+      <h2 class="section-title">Core <em>Methods</em></h2>
+    </div>
+    <div class="areas-grid">
+      {% for area in research.areas %}
+      {{ areaCard(area) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Applications -->
+<section class="section" style="background: var(--color-bg-alt);">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Domains</span>
+      <h2 class="section-title">Application <em>Areas</em></h2>
+      <p class="section-description">We apply our computational intelligence and optimization methods to solve real-world problems in diverse domains.</p>
+    </div>
+    <div class="app-grid reveal">
+      {% for app in research.applications %}
+      {{ appCard(app) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About the Lab -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">About</span>
+      <h2 class="section-title">Our <em>Mission</em></h2>
+    </div>
+    <div class="about-content reveal">
+      <div class="about-text">
+        <p>The LABIA research group is a team at the Department of Computer Science from the Institute of Computing, Federal University of Bahia, Brazil, created with the purpose of developing high-quality research in several complementary domains.</p>
+        <p>We study automatic knowledge acquisition; theory, models, and algorithms for different optimization problems; analysis of big data and temporal systems; and intelligent allocation of computing resources.</p>
+        <p>The group is focused on the investigation and development of methods to address both complex real-world and theoretical problems to which traditional computational approaches cannot be applied very successfully.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="about-highlight">
+          <h4>Interdisciplinary Approach</h4>
+          <p>We combine expertise from computational intelligence, optimization, and data science to tackle problems that span multiple disciplines.</p>
+        </div>
+        <div class="about-highlight">
+          <h4>International Collaboration</h4>
+          <p>Our faculty has research experience at institutions across Canada, China, and Spain, fostering a global perspective in our work.</p>
+        </div>
+        <div class="about-highlight">
+          <h4>Student Opportunities</h4>
+          <p>We welcome MSc., PhD, and Postdoc students interested in joining our research. Check our admission program for details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

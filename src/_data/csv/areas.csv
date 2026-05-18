@@ -1,0 +1,7 @@
+name,icon,iconClass,iconStyle,description,tags
+"Artificial Intelligence","🤖",ai,,"Developing intelligent systems that can perceive, reason, and act in complex environments. We explore both symbolic and sub-symbolic approaches to AI.","Knowledge Acquisition;Intelligent Systems;Reasoning"
+"Machine Learning","🧠",ml,,"Developing and applying learning algorithms for pattern recognition, prediction, and data-driven discovery. Our work includes both supervised and unsupervised methods.","Time Series;Clustering;Text Mining;Fuzzy Logic"
+"Data Science","📊",ds,,"Extracting actionable insights from large-scale datasets and temporal systems. We focus on the complete pipeline from data collection to knowledge extraction.","Big Data;Temporal Systems;Analytics"
+"Optimization","⚡",opt,,"Theory, models, and algorithms for different optimization problems. We study both single- and multi-objective combinatorial optimization using evolutionary and hybrid approaches.","Metaheuristics;Evolutionary Computation;Graph Theory"
+"Deep Learning","🔬",,"background: rgba(244, 63, 94, 0.1); color: #f43f5e;","Leveraging deep neural network architectures for complex representation learning, including applications in vision, natural language, and structured data.","Neural Networks;Representation Learning"
+"Dynamical Systems","🌀",,"background: rgba(251, 191, 36, 0.1); color: #fbbf24;","Analyzing complex dynamical systems and chaos theory for understanding temporal patterns and predicting system behavior.","Chaos Theory;Time Series Analysis"

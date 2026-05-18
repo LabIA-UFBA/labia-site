@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Publications — LABIA | UFBA
+description: Publications and academic output from the LABIA research group at UFBA.
+---
+
+{% from "partials/faculty-card.njk" import facultyCard %}
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-label">Academic Output</span>
+    <h1 class="section-title" style="font-size: clamp(2.2rem, 5vw, 3.5rem);"><em>Publications</em></h1>
+    <p class="section-description">Access our publications through each faculty member's academic profiles listed below.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="pub-note reveal">
+      <p>Our publications are available through the Google Scholar and Lattes profiles of each faculty member. These platforms provide the most up-to-date and comprehensive listings of our research output, including journal articles, conference papers, and book chapters.</p>
+    </div>
+
+    <div class="pub-faculty-links" style="margin-top: 3rem;">
+      {% for member in team.faculty %}
+      {{ facultyCard(member, 'links') }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

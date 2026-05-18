@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: Contact — LABIA | UFBA
+description: Contact information and location of the LABIA research group at UFBA.
+---
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-label">Get in Touch</span>
+    <h1 class="section-title" style="font-size: clamp(2.2rem, 5vw, 3.5rem);"><em>Contact</em> Us</h1>
+    <p class="section-description">Interested in our research, collaboration opportunities, or joining as a graduate student? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="contact-item">
+          <h4>Location</h4>
+          <p>Department of Computer Science<br>
+            Institute of Computing (IC)<br>
+            Federal University of Bahia (UFBA)<br>
+            Salvador, Bahia — Brazil</p>
+        </div>
+        <div class="contact-item">
+          <h4>Faculty Contacts</h4>
+          {% for member in team.faculty %}
+          <p{% if not loop.first %} style="margin-top: 0.75rem;"{% endif %}>
+            <strong style="color: var(--color-text);">{{ member.name }}</strong><br>
+            {{ member.email }}
+          </p>
+          {% endfor %}
+        </div>
+        <div class="contact-item">
+          <h4>Admission</h4>
+          <p>If you are interested in working with us as MSc., PhD, or Postdoc student, check out the <a href="https://pgcomp.ufba.br" target="_blank" rel="noopener noreferrer">PGCOMP admission program</a> at UFBA.</p>
+        </div>
+        <div class="contact-item">
+          <h4>Links</h4>
+          <p>
+            <a href="https://computacao.ufba.br" target="_blank" rel="noopener noreferrer">Institute of Computing — UFBA</a><br>
+            <a href="https://pgcomp.ufba.br" target="_blank" rel="noopener noreferrer">PGCOMP — Graduate Program</a><br>
+            <a href="https://github.com/LabIA-UFBA" target="_blank" rel="noopener noreferrer">GitHub — LABIA</a>
+          </p>
+        </div>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000.0!2d-38.5074878!3d-13.0000731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716051edf3febc1%3A0x3c6bf88b8e7dcf9f!2sInstituto%20de%20Computa%C3%A7%C3%A3o%20(IC%2FUFBA)!5e0!3m2!1spt-BR!2sbr"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="UFBA - Institute of Computing location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

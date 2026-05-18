@@ -1,0 +1,11 @@
+{% macro ctaSection(titleHtml, description, linkUrl, linkText) %}
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2 class="section-title">{{ titleHtml | safe }}</h2>
+      <p class="section-description">{{ description }}</p>
+      <a href="{{ linkUrl | url }}" class="btn btn-primary">{{ linkText }} →</a>
+    </div>
+  </div>
+</section>
+{% endmacro %}

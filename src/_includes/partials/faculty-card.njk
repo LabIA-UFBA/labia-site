@@ -1,0 +1,53 @@
+{% macro facultyCard(member, variant) %}
+{% set imgPath = '/assets/img/team/' + member.photo %}
+
+{% if variant === 'preview' %}
+<div class="faculty-card reveal">
+  <div class="faculty-header">
+    <img class="faculty-avatar" src="{{ imgPath | url }}" alt="{{ member.name }}">
+    <div>
+      <div class="faculty-name">{{ member.name }}</div>
+      <div class="faculty-role">{{ member.role }}</div>
+    </div>
+  </div>
+  <p class="faculty-bio">{{ member.bioShort }}</p>
+  <div class="faculty-links">
+    <a href="{{ member.scholar }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Scholar</a>
+    <a href="{{ member.lattes }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Lattes</a>
+  </div>
+</div>
+
+{% elif variant === 'full' %}
+<div class="faculty-card reveal" style="margin-bottom: 2rem; max-width: 100%;">
+  <div class="faculty-header">
+    <img class="faculty-avatar" src="{{ imgPath | url }}" alt="{{ member.name }}">
+    <div>
+      <div class="faculty-name" style="font-size: 1.5rem;">{{ member.name }}</div>
+      <div class="faculty-role">{{ member.role }} — {{ member.department }}</div>
+    </div>
+  </div>
+  <p class="faculty-bio">{{ member.bio }}</p>
+  <div class="faculty-area"><strong>Main research area:</strong> {{ member.researchArea }}</div>
+  <div class="faculty-contact"><strong>Contact:</strong> <a href="mailto:{{ member.email }}">{{ member.email }}</a></div>
+  <div class="faculty-links">
+    <a href="{{ member.scholar }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <a href="{{ member.lattes }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Lattes (Brazil)</a>
+  </div>
+</div>
+
+{% elif variant === 'links' %}
+<div class="pub-faculty-item reveal">
+  <div class="faculty-header" style="margin-bottom: 1rem;">
+    <img class="faculty-avatar" src="{{ imgPath | url }}" alt="{{ member.name }}">
+    <div>
+      <h3 style="font-family: var(--font-display); font-size: 1.15rem;">{{ member.name }}</h3>
+      <div class="faculty-role">{{ member.researchArea }}</div>
+    </div>
+  </div>
+  <div class="faculty-links">
+    <a href="{{ member.scholar }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <a href="{{ member.lattes }}" class="faculty-link" target="_blank" rel="noopener noreferrer">Lattes (Brazil)</a>
+  </div>
+</div>
+{% endif %}
+{% endmacro %}

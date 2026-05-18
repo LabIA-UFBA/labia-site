@@ -1,0 +1,23 @@
+{% macro memberRow(person, showCountry) %}
+<tr>
+  <td class="former-name">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="{{ ('/assets/img/team/' + person.photo) | url }}" onerror="this.onerror=null;this.src='{{ '/assets/img/avatar-placeholder.svg' | url }}';" alt="{{ person.name }}'s Avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+      <span>{{ person.name }}</span>
+    </div>
+  </td>
+  {% if showCountry %}
+  <td class="former-period">{{ person.flag }} {{ person.country }}</td>
+  <td class="former-about"><a href="{{ person.scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></td>
+  {% else %}
+  <td class="former-about">
+    {% if person.lattes %}
+    <a href="{{ person.lattes }}" target="_blank" rel="noopener noreferrer">Lattes (Brazil)</a>
+    {% else %}
+    Lattes (Brazil)
+    {% endif %}
+  </td>
+  <td class="former-about"><a href="mailto:{{ person.email }}" target="_blank" rel="noopener noreferrer">{{ person.email }}</a></td>
+  {% endif %}
+</tr>
+{% endmacro %}

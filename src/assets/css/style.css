@@ -255,6 +255,15 @@ body::before {
   fill: currentColor;
 }
 
+.nav-links a.nav-github img {
+  opacity: 0.65;
+  transition: opacity var(--transition);
+}
+
+.nav-links a.nav-github:hover img {
+  opacity: 1;
+}
+
 .nav-toggle {
   display: none;
   background: none;

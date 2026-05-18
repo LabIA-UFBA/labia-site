@@ -1,0 +1,117 @@
+---
+layout: base.njk
+title: LABIA — Computational Intelligence & Optimization Lab | UFBA
+description: LABIA is a Computational Intelligence and Optimization research group at the Federal University of Bahia (UFBA), focused on AI, machine learning, data science, and deep learning.
+---
+
+{% from "partials/area-card.njk" import areaCard, appCard %}
+{% from "partials/faculty-card.njk" import facultyCard %}
+{% from "partials/cta.njk" import ctaSection %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <img src="{{ '/assets/img/logo_white.svg' | url }}" class="hero-logo" alt="LABIA">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        {{ site.institute }}
+      </div>
+      <h1><em>Artificial Intelligence Research</em> Lab</h1>
+      <p class="hero-description">
+        We investigate and develop methods to address complex real-world and theoretical problems through artificial intelligence, machine learning, data science, and optimization.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ '/pages/research/' | url }}" class="btn btn-primary">Explore Research →</a>
+        <a href="{{ '/pages/contact/' | url }}" class="btn btn-ghost">Join Our Lab</a>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="container">
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <div class="stat-number">{{ site.stats.faculty }}</div>
+      <div class="stat-label">Faculty Members</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ site.stats.researchAreas }}</div>
+      <div class="stat-label">Research Areas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ site.stats.domains }}</div>
+      <div class="stat-label">Application Domains</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ site.founded }}</div>
+      <div class="stat-label">Established</div>
+    </div>
+  </div>
+</section>
+
+<!-- Research Areas -->
+<section class="section" id="research">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">What We Study</span>
+      <h2 class="section-title">Research <em>Areas</em></h2>
+      <p class="section-description">Our group focuses on the theory, application, and development of computational intelligence methods for automatic knowledge acquisition.</p>
+    </div>
+    <div class="areas-grid">
+      {% for area in research.areas %}
+        {% if area.iconClass %}
+        {{ areaCard(area) }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Applications -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Applications</span>
+      <h2 class="section-title">Where We <em>Apply</em></h2>
+    </div>
+    <div class="app-grid reveal">
+      {% for app in research.applications %}
+      {{ appCard(app) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Faculty Preview -->
+<section class="section" style="background: var(--color-bg-alt);">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Our Team</span>
+      <h2 class="section-title">Meet the <em>Faculty</em></h2>
+      <p class="section-description">Our research is led by experienced faculty members with international academic backgrounds.</p>
+    </div>
+    <div class="faculty-grid">
+      {% for member in team.faculty %}
+      {{ facultyCard(member, 'preview') }}
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 3rem;" class="reveal">
+      <a href="{{ '/pages/team/' | url }}" class="btn btn-ghost">View Full Team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+{{ ctaSection('Interested in <em>Joining</em>?', 'We welcome MSc., PhD, and Postdoc students. Check out our admission program and start your research journey with us.', '/pages/contact/', 'Learn More') }}

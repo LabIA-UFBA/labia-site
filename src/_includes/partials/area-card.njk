@@ -1,0 +1,20 @@
+{% macro areaCard(area) %}
+<div class="area-card reveal">
+  <div class="area-icon{% if area.iconClass %} {{ area.iconClass }}{% endif %}"{% if area.iconStyle %} style="{{ area.iconStyle }}"{% endif %}>{{ area.icon }}</div>
+  <h3>{{ area.name }}</h3>
+  <p>{{ area.description }}</p>
+  <div class="tags">
+    {% for tag in area.tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro appCard(app) %}
+<div class="app-card">
+  <div class="app-emoji">{{ app.emoji }}</div>
+  <h3>{{ app.name }}</h3>
+  <p>{{ app.description }}</p>
+</div>
+{% endmacro %}

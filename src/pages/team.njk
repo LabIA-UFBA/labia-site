@@ -1,0 +1,221 @@
+---
+layout: base.njk
+title: Team — LABIA | UFBA
+description: Meet the faculty members of LABIA research group at UFBA.
+---
+
+{% from "partials/faculty-card.njk" import facultyCard %}
+{% from "partials/member-row.njk" import memberRow %}
+{% from "partials/cta.njk" import ctaSection %}
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <span class="section-label">Our People</span>
+    <h1 class="section-title" style="font-size: clamp(2.2rem, 5vw, 3.5rem);">Meet the <em>Team</em></h1>
+    <p class="section-description">Our research is driven by faculty members with strong international academic backgrounds and complementary expertise.</p>
+  </div>
+</section>
+
+<!-- Faculty Full Profiles -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    {% for member in team.faculty %}
+    {{ facultyCard(member, 'full') }}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Current Members -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Lab Members</span>
+      <h2 class="section-title">Current <em>Students</em></h2>
+      <p class="section-description">Graduate and undergraduate students currently conducting research at LABIA.</p>
+    </div>
+
+    <!-- Postdoc -->
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge postdoc">Postdoc</span>
+      </div>
+      <p class="former-empty">We currently have no postdoctoral researchers. Interested candidates are encouraged to reach out directly to our faculty.</p>
+    </div>
+
+    <!-- PhD -->
+    {% if team.currentStudents.phd.length > 0 %}
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge phd">PhD Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.currentStudents.phd %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Master's -->
+    {% if team.currentStudents.msc.length > 0 %}
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge msc">Master's Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.currentStudents.msc %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Undergraduate -->
+    {% if team.currentStudents.undergrad.length > 0 %}
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge ic">Undergraduate Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.currentStudents.undergrad %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<!-- International Collaborators -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Global Network</span>
+      <h2 class="section-title">International <em>Collaborators</em></h2>
+      <p class="section-description">Researchers from partner institutions around the world who collaborate with LABIA on joint projects and research initiatives.</p>
+    </div>
+    <div class="former-table-wrap former-table-wrap--top reveal">
+      <table class="former-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for person in team.collaborators %}
+          {{ memberRow(person, true) }}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Alumni -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Alumni</span>
+      <h2 class="section-title">Former <em>Members</em></h2>
+      <p class="section-description">Students and researchers who trained at LABIA and have moved on to positions in academia and industry.</p>
+    </div>
+
+    <!-- PhD Alumni -->
+    {% if team.alumni.phd.length > 0 %}
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge phd">PhD Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.alumni.phd %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Master's Alumni -->
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge msc">Master's Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+      </div>
+    </div>
+
+    <!-- Undergraduate Alumni -->
+    <div class="former-group reveal">
+      <div class="former-group-label">
+        <span class="degree-badge ic">Undergraduate Students</span>
+      </div>
+      <div class="former-table-wrap">
+        <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Visitors -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Visiting Researchers</span>
+      <h2 class="section-title">Visitors</h2>
+      <p class="section-description">Researchers who visited LABIA for short- or long-term research stays.</p>
+    </div>
+    <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+{{ ctaSection('Want to <em>Work</em> With Us?', 'We accept MSc., PhD, and Postdoc students. If you\'re interested in computational intelligence or optimization research, reach out.', '/pages/contact/', 'Get in Touch') }}

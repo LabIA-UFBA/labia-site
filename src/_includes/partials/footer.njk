@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="container">
+    <p class="footer-text">© 2025 LABIA — Institute of Computing, Federal University of Bahia</p>
+    <div class="footer-links">
+      {% for link in site.footerLinks %}
+        <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</footer>
