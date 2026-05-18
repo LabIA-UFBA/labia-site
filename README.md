@@ -4,7 +4,7 @@ Site institucional do grupo de pesquisa LabIA (Laboratório de Inteligência Art
 
 ## Como editar o site
 
-Todas as informações do site ficam em arquivos **CSV** dentro de [`src/_data/csv/`](./tree/main/src/_data/csv). Para alterar qualquer conteúdo, edite o CSV correspondente e faça push. Uma GitHub Action compila e publica o site automaticamente.
+Todas as informações do site ficam em arquivos **CSV** dentro de [`src/_data/csv/`](./src/_data/csv). Para alterar qualquer conteúdo, edite o CSV correspondente e faça push. Uma GitHub Action compila e publica o site automaticamente.
 
 ### `students.csv` — Alunos atuais e ex-alunos
 
