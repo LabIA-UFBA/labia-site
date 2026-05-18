@@ -75,7 +75,7 @@ Aparece na [**home**](https://labia.ufba.br) e na página [**Research**](https:/
 
 ### Adicionar foto de uma pessoa
 
-Coloque o arquivo `.webp` em [`src/assets/img/team/`](.src/assets/img/team) e referencie o nome exato do arquivo na coluna `photo` do CSV correspondente.
+Coloque o arquivo `.webp` em [`src/assets/img/team/`](./src/assets/img/team) e referencie o nome exato do arquivo na coluna `photo` do CSV correspondente.
 
 ---
 
