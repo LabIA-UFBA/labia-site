@@ -13,7 +13,7 @@ Cada linha é um aluno ou ex-aluno. As informações aparecem na página [**Team
 | Coluna | Descrição | Valores possíveis |
 |---|---|---|
 | `status` | Situação do aluno | `current` (ativo) ou `alumni` (ex-aluno) |
-| `level` | Nível acadêmico | `phd`, `msc`, `undergrad` |
+| `level` | Nível acadêmico | `postdoc`, `phd`, `msc`, `undergrad` |
 | `name` | Nome completo | — |
 | `photo` | Nome do arquivo em `assets/img/team/` | — |
 | `lattes` | URL do currículo Lattes | — |

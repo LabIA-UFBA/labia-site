@@ -8,6 +8,7 @@ module.exports = function() {
   return {
     faculty: readCSV('faculty.csv'),
     currentStudents: {
+      postdoc: allStudents.filter(s => s.status === 'current' && s.level === 'postdoc').sort(sortByName),
       phd: allStudents.filter(s => s.status === 'current' && s.level === 'phd').sort(sortByName),
       msc: allStudents.filter(s => s.status === 'current' && s.level === 'msc').sort(sortByName),
       undergrad: allStudents.filter(s => s.status === 'current' && s.level === 'undergrad').sort(sortByName),

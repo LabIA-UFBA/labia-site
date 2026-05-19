@@ -40,16 +40,35 @@ description: Meet the faculty members of LABIA research group at UFBA.
       <div class="former-group-label">
         <span class="degree-badge postdoc">Postdoc</span>
       </div>
-      <p class="former-empty">We currently have no postdoctoral researchers. Interested candidates are encouraged to reach out directly to our faculty.</p>
+      <div class="former-table-wrap">
+        {% if team.currentStudents.postdoc.length > 0 %}
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.currentStudents.postdoc %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="former-empty">We currently have no postdoctoral researchers. Interested candidates are encouraged to reach out directly to our faculty.</p>
+        {% endif %}
+      </div>
     </div>
 
     <!-- PhD -->
-    {% if team.currentStudents.phd.length > 0 %}
     <div class="former-group reveal">
       <div class="former-group-label">
         <span class="degree-badge phd">PhD Students</span>
       </div>
       <div class="former-table-wrap">
+        {% if team.currentStudents.phd.length > 0 %}
         <table class="former-table">
           <thead>
             <tr>
@@ -64,17 +83,19 @@ description: Meet the faculty members of LABIA research group at UFBA.
             {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p class="former-empty">We currently have no PhD students. Interested candidates are encouraged to reach out directly to our faculty.</p>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
 
     <!-- Master's -->
-    {% if team.currentStudents.msc.length > 0 %}
     <div class="former-group reveal">
       <div class="former-group-label">
         <span class="degree-badge msc">Master's Students</span>
       </div>
       <div class="former-table-wrap">
+        {% if team.currentStudents.msc.length > 0 %}
         <table class="former-table">
           <thead>
             <tr>
@@ -89,17 +110,19 @@ description: Meet the faculty members of LABIA research group at UFBA.
             {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p class="former-empty">We currently have no Master's students. Interested candidates are encouraged to reach out directly to our faculty.</p>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
 
     <!-- Undergraduate -->
-    {% if team.currentStudents.undergrad.length > 0 %}
     <div class="former-group reveal">
       <div class="former-group-label">
         <span class="degree-badge ic">Undergraduate Students</span>
       </div>
       <div class="former-table-wrap">
+        {% if team.currentStudents.undergrad.length > 0 %}
         <table class="former-table">
           <thead>
             <tr>
@@ -114,9 +137,11 @@ description: Meet the faculty members of LABIA research group at UFBA.
             {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p class="former-empty">We currently have no undergraduate students. Interested candidates are encouraged to reach out directly to our faculty.</p>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
 
   </div>
 </section>
@@ -130,6 +155,7 @@ description: Meet the faculty members of LABIA research group at UFBA.
       <p class="section-description">Researchers from partner institutions around the world who collaborate with LABIA on joint projects and research initiatives.</p>
     </div>
     <div class="former-table-wrap former-table-wrap--top reveal">
+      {% if team.collaborators.length > 0 %}
       <table class="former-table">
         <thead>
           <tr>
@@ -144,6 +170,9 @@ description: Meet the faculty members of LABIA research group at UFBA.
           {% endfor %}
         </tbody>
       </table>
+      {% else %}
+      <p class="former-empty">No international collaborators at this time.</p>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -158,12 +187,12 @@ description: Meet the faculty members of LABIA research group at UFBA.
     </div>
 
     <!-- PhD Alumni -->
-    {% if team.alumni.phd.length > 0 %}
     <div class="former-group reveal">
       <div class="former-group-label">
         <span class="degree-badge phd">PhD Students</span>
       </div>
       <div class="former-table-wrap">
+        {% if team.alumni.phd.length > 0 %}
         <table class="former-table">
           <thead>
             <tr>
@@ -178,9 +207,11 @@ description: Meet the faculty members of LABIA research group at UFBA.
             {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p class="former-empty">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
 
     <!-- Master's Alumni -->
     <div class="former-group reveal">
@@ -188,7 +219,24 @@ description: Meet the faculty members of LABIA research group at UFBA.
         <span class="degree-badge msc">Master's Students</span>
       </div>
       <div class="former-table-wrap">
-        <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+        {% if team.alumni.msc.length > 0 %}
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.alumni.msc %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="former-empty">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+        {% endif %}
       </div>
     </div>
 
@@ -198,7 +246,24 @@ description: Meet the faculty members of LABIA research group at UFBA.
         <span class="degree-badge ic">Undergraduate Students</span>
       </div>
       <div class="former-table-wrap">
-        <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+        {% if team.alumni.undergrad.length > 0 %}
+        <table class="former-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in team.alumni.undergrad %}
+            {{ memberRow(person) }}
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="former-empty">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+        {% endif %}
       </div>
     </div>
 
@@ -213,7 +278,7 @@ description: Meet the faculty members of LABIA research group at UFBA.
       <h2 class="section-title">Visitors</h2>
       <p class="section-description">Researchers who visited LABIA for short- or long-term research stays.</p>
     </div>
-    <p style="color: var(--text-muted); font-style: italic; padding: 1rem 0; text-align: center;">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
+    <p class="former-empty">This list is currently under revision and will be updated shortly to reflect our complete records.</p>
   </div>
 </section>
 
